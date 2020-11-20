@@ -13,3 +13,39 @@
  *= require_tree .
  *= require_self
  */
+ 
+ .navbar-brand>img{
+    height: 55px;
+    width: 90px;
+}
+
+.navbar-container{
+     margin-bottom: 0;
+ }
+
+.navbar{
+    background-color: #003399 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 20px;
+}
+
+  .nav-item,.nav-item>a{
+     color: white !important;
+     margin-left: 20px;
+ }
+
+ .nav-item>a:hover{
+   color: rgb(218, 213, 213) !important;
+}
+
+.login-signin{
+   max-width: 550px;
+   margin: 20px auto;
+}
+
+.form-card{
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 10px;
+}

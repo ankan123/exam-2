@@ -1,0 +1,36 @@
+<div class="card form-card">
+<div class="Card-body">
+
+  <p id="notice"><%= notice %></p>
+
+  <h3>Issue detail #<%= @issue.id %></h3>
+  <p>
+    <strong>Employee:</strong>
+    <%= @issue.employee.name %>
+  </p>
+
+  <p>
+    <strong>Item:</strong>
+    <%= @issue.item.name %>
+  </p>
+
+  <p>
+    <strong>Quantity:</strong>
+    <%= @issue.quantity %>
+  </p>
+
+  <p>
+    <strong>Issue date:</strong>
+    <%= @issue.issue_date %>
+  </p>
+
+  <p>
+    <strong>Return date:</strong>
+    <%= @issue.return_date %>
+  </p>
+
+ 
+  <%= link_to 'Back', issues_path, :class => 'btn btn-danger btn-sm' %>
+
+</div>
+</div>

@@ -1,0 +1,56 @@
+
+<div class="card form-card">
+<div class="card-body">
+
+
+<%= form_with(model: item, local: true) do |form| %>
+  <% if item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+        <% item.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, :class => 'form-control', :required => true  %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :brand %>
+    <%= collection_select( :item, :brand_id, Brand.all, :id, :name, {}, { :multiple => false , :class => 'form-control' , :required => true} ) %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :category %>
+    <%= collection_select( :item, :category_id, Category.all, :id, :name, {},  { :multiple => false, :class => 'form-control' , :required => true })  %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity, :class => 'form-control', :required => true, :min => 0  %>
+  </div>
+
+  click on the checkbox if working
+  <div class="form-group">
+    <%= form.check_box :status, :required => true  %>
+    <%= form.label :status %><em>(working/not-working)</em>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :notes %>
+    <%= form.text_area :notes, :class => 'form-control', :required => true  %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'add item', :class => 'btn btn-primary' %>
+  </div>
+<% end %>
+
+</div>
+</div>

@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  employee: one
+  item: one
+  quantity: 1
+  issue_date: 2020-11-20
+  return_date_date: MyString
+
+two:
+  employee: two
+  item: two
+  quantity: 1
+  issue_date: 2020-11-20
+  return_date_date: MyString

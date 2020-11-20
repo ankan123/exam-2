@@ -1,0 +1,45 @@
+
+<div class="card form-card">
+<div class="card-body">
+  <p id="notice"><%= notice %></p>
+
+  <h3>Item details</h3>
+  <p>
+    <strong>Name:</strong>
+    <%= @item.name %>
+  </p>
+
+  <p>
+    <strong>Brand:</strong>
+    <%= @item.brand.name %>
+  </p>
+
+  <p>
+    <strong>Category:</strong>
+    <%= @item.category.name %>
+  </p>
+
+  <p>
+    <strong>Quantity:</strong>
+    <%= @item.quantity %>
+  </p>
+
+  <p>
+    <strong>Status:</strong>
+    <% if @item.status %>
+      Working 
+    <%else%>
+      Not-working 
+    <%end%>
+  </p>
+
+  <p>
+    <strong>Notes:</strong>
+    <%= @item.notes %>
+  </p>
+
+  <%= link_to 'Edit', edit_item_path(@item) %> |
+  <%= link_to 'Back', items_path %>
+
+</div>
+</div>

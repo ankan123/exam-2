@@ -1,0 +1,34 @@
+<div class="card check-stock-card">
+<div class="card-body">
+    <% if flash[:dates_errors] %>
+     <% flash[:dates_errors].each do |msg| %>
+        <div class="alert alert-danger error-alert" role="alert">
+         <%= msg %>
+        </div>
+    <% end %>              
+  <% end %>
+
+ <div class="container check-availability-div">
+    <h3 class="text-center">Check Stock Availability</h3>
+                
+                <%= form_tag new_issue_path, :class => "form-inline" ,:method => 'get' do %>
+                
+                  <div class="form-group mx-sm-1 mb-2">
+                  item :                              
+                  <%= collection_select( :issue, :item_id, Item.all, :id, :name, {}, { :multiple => false , :class => 'form-control' , :required => true } ) %>
+                  </div> 
+                  <div class="form-group mx-sm-1 mb-2"> 
+                    issue_date :          
+                    <%= date_field_tag :issue_date, params[:issue_date], :required => true %> 
+                  </div>                
+                  <div class="form-group mx-sm-1 mb-2">           
+                    return-date :
+                    <%= date_field_tag :return_date, params[:return_date], :required => true %> 
+                  </div>
+                  <%= submit_tag "Check stock availability", :class => "btn btn-primary mb-2 btn-sm" %>
+                <% end %> 
+ </div>
+</div>
+</div>
+  
+  
