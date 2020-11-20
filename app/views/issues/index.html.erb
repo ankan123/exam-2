@@ -31,6 +31,9 @@
 
 <br>
 <% if current_user %>
-<h6 class="text-center">Check to see if there is quantity available for the particluar item to allocate an employee</h6>
+  <h6 class="text-center">Check to see if there is quantity available for the particluar item to allocate an employee</h6>
   <%= render 'check_stock' %>
+<%else%>
+  <h5>Log-in to allocate orders to employees</h5>
+  <%= link_to 'Sign In', new_user_session_path, :class => 'btn btn-success btn-sm' %>
 <%end%>
